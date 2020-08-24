@@ -1,5 +1,5 @@
 package com.multi.animalhospitalVO;
 
-public class PharmacyVO implements Medical {
+public class PharmacyVO extends Medical {
 
 }
