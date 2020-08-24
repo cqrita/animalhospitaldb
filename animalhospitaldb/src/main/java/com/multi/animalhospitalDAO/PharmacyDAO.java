@@ -18,7 +18,7 @@ public class PharmacyDAO implements MedicalDAO {
 	public ArrayList<Medical> searchAddress(String a1, String a2) {
 		ArrayList<Medical> list = new ArrayList<Medical>(); 		
 		try {
-			String sql = "select * from hospital where seq=?";
+			String sql = "select * from pharmacy where address_1=? and address_2=?";
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr");
 			PreparedStatement pt = con.prepareStatement(sql);
