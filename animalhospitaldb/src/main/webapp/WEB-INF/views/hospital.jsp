@@ -89,6 +89,8 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+	<jsp:include page="sitemap.jsp"></jsp:include>
+	<div style="margin-left:30%">
 	<h1>동물병원 검색</h1>
 	<select name="city" id="city">	
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
@@ -131,5 +133,7 @@ $(document).ready(function() {
 		</table>
 	</div>
 	<jsp:include page="menu.jsp"></jsp:include>
+	</div>
+
 </body>
 </html>
