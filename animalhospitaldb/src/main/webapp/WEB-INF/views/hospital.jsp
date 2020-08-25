@@ -5,8 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-</style>
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -82,8 +80,14 @@ $(document).ready(function() {
 	</select>
 	<br>
 	<button id="ajaxbtn" name="ajaxbtn">검색</button>
-	<div style="height: 300px; overflow: auto;">
 	<table>
+		<colgroup>
+			<col width="10%">
+			<col width="80%">
+			<col width="10%">
+			<col width="0%">
+			<col width="0%">
+		</colgroup>
 		<tr>
 			<th>병원명</th>
 			<th>주소</th>
@@ -91,9 +95,16 @@ $(document).ready(function() {
 			<th id='x' hidden='hidden'></th>
 			<th id='y' hidden='hidden'></th>
 		</tr>
-		<tbody id="tab" >
-		
-		</tbody>
+	</table>
+	<div style="height: 500px;overflow: auto;">
+	<table id="tab">
+		<colgroup>
+			<col width="10%">
+			<col width="80%">
+			<col width="10%">
+			<col width="0%">
+			<col width="0%">
+		</colgroup>
 	</table>
 	</div>
 </body>

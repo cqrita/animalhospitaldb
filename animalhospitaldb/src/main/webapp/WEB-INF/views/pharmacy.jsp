@@ -66,8 +66,14 @@ $(document).ready(function() {
 	</select>
 	<br>
 	<button id="ajaxbtn" name="ajaxbtn">검색</button>
-
 	<table>
+		<colgroup>
+			<col width="10%">
+			<col width="80%">
+			<col width="10%">
+			<col width="0%">
+			<col width="0%">
+		</colgroup>
 		<tr>
 			<th>약국명</th>
 			<th>주소</th>
@@ -75,9 +81,17 @@ $(document).ready(function() {
 			<th id='x' hidden='hidden'></th>
 			<th id='y' hidden='hidden'></th>
 		</tr>
-		<tbody  id="tab" style="height: 300px; overflow:auto;">
-		
-		</tbody>
 	</table>
+	<div style="height: 500px;overflow: auto;">
+	<table id="tab">
+		<colgroup>
+			<col width="10%">
+			<col width="80%">
+			<col width="10%">
+			<col width="0%">
+			<col width="0%">
+		</colgroup>
+	</table>
+	</div>
 </body>
 </html>

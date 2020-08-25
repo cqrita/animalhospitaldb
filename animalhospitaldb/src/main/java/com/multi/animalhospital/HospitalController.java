@@ -2,14 +2,12 @@ package com.multi.animalhospital;
 
 import java.util.ArrayList;
 
-import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.view.json.MappingJacksonJsonView;
 
 import com.multi.animalhospitalDAO.HospitalDAO;
 import com.multi.animalhospitalVO.Medical;
