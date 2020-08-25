@@ -17,13 +17,22 @@ public class PharmController {
 	PharmacyDAO dao;
 	
 	@RequestMapping("/pharmacy")
-	public void hospital() {}	
+	public void pharmacy() {}	
 	
 	@RequestMapping(value ="pharmacy/message", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<Medical> message(String a1, String a2) {
 		ArrayList<Medical> list; 
 		list=dao.searchAddress(a1, a2);
+		return list;
+	}
+	@RequestMapping(value ="pharmacy/county", method = RequestMethod.POST,produces = "application/json; charset=utf8")
+	@ResponseBody
+	public ArrayList<String> county(String a1) {
+		ArrayList<String> list;
+		System.out.println(a1);
+		list=dao.searchCounty(a1);
+		System.out.println(list.get(1));
 		return list;
 	}
 }

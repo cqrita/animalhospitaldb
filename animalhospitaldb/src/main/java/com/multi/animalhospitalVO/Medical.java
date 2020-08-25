@@ -1,6 +1,7 @@
 package com.multi.animalhospitalVO;
 
 public class Medical {
+	int seq;
 	String name;
 	String nameAddress;
 	String seg;
@@ -9,9 +10,10 @@ public class Medical {
 	String tel;
 	String X;
 	String Y;
-	public Medical(String name, String nameAddress, String seg, String statusCode, String statusName, String tel,
-			String x, String y) {
+	public Medical(int seq, String name, String nameAddress, String seg, String statusCode, String statusName,
+			String tel, String x, String y) {
 		super();
+		this.seq = seq;
 		this.name = name;
 		this.nameAddress = nameAddress;
 		this.seg = seg;
@@ -23,6 +25,13 @@ public class Medical {
 	}
 	public Medical() {
 		super();
+	}
+
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 	public String getName() {
 		return name;

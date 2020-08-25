@@ -27,11 +27,12 @@ public class HospitalDAO implements MedicalDAO {
 			ResultSet rs = pt.executeQuery();
 			while(rs.next()) {
 				Medical vo = new HospitalVO();
+				vo.setSeq(rs.getInt("seq"));
 				vo.setName(rs.getString("name"));
-				vo.setNameAddress(rs.getString("nameAddress"));
+				vo.setNameAddress(rs.getString("name_Address"));
 				vo.setSeg(rs.getString("seg"));
-				vo.setStatusCode(rs.getString("statusCode"));
-				vo.setStatusName(rs.getString("statusName"));
+				vo.setStatusCode(rs.getString("status_Code"));
+				vo.setStatusName(rs.getString("status_Name"));
 				vo.setTel(rs.getString("tel"));
 				vo.setX(rs.getString("X"));
 				vo.setY(rs.getString("Y"));
@@ -44,5 +45,25 @@ public class HospitalDAO implements MedicalDAO {
 		}
 		return list;
 	}
-	
+	@Override
+	public ArrayList<String> searchCounty(String a1) {
+		ArrayList<String> list = new ArrayList<String>(); 		
+		try {
+			String sql = "select distinct address_2 from hospital where address_1=?";
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr");
+			PreparedStatement pt = con.prepareStatement(sql);
+			pt.setString(1, a1);
+			ResultSet rs = pt.executeQuery();
+			while(rs.next()) {
+				String county=rs.getString("address_2");
+				list.add(county);
+			}
+			pt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
