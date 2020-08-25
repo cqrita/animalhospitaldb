@@ -54,7 +54,7 @@ $(document).ready(function() {
 						if(med[i].tel==null){
 							med[i].tel=" "
 						}
-						var tab="<tr id="+med[i].seq +"><td>"+med[i].name+"</td><td>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].X+"</td><td class='y' hidden='hidden'>"+med[i].Y+"</td></tr>";            
+						var tab="<tr id="+med[i].seq +"><td>"+med[i].name+"</td><td class='address'>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].X+"</td><td class='y' hidden='hidden'>"+med[i].Y+"</td></tr>";            
 						$("#tab").append(tab);
 					}
 				}
