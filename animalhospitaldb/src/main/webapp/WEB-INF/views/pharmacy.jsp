@@ -81,6 +81,9 @@ $(document).ready(function() {
 					alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 				}
 			});
+		}else{
+			$("#county").empty();
+			$("#county").append("<option value=\"지역을 선택해주세요\" selected=\"selected\">지역을 선택해주세요</option>");
 		}
 	});//change
 });
