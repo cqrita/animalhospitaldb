@@ -27,6 +27,9 @@ public class HospitalController {
 	public ArrayList<Medical> message(String a1, String a2) {
 		ArrayList<Medical> list; 
 		list=dao.searchAddress(a1, a2);
+		for(Medical m: list) {
+			System.out.println(m.getX());
+		}
 		return list;
 	}
 	
