@@ -194,7 +194,7 @@ background-color: gray;
 </head>
 <body>
 	<jsp:include page="sitemap.jsp"></jsp:include>
-	<div class="body" style="margin-left:30%">
+	<div class="body" style="margin-left:27%">
 	<form action="/animalhospital/sick" method="get"></form>
 	<div class="multi-button">
   <button id="button1">예방접종</button>

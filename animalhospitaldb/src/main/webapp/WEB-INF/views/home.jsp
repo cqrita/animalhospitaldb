@@ -6,7 +6,7 @@
 </head>
 <body>
 <jsp:include page="sitemap.jsp"></jsp:include>
-<div style="margin-left:30%">
+<div style="margin-left:27%">
 <h1>
 	동물병원 및 약국 검색 
 </h1>

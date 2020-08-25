@@ -12,7 +12,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: linear-gradient(to right bottom, gold, chocolate);
+	background: linear-gradient(to right bottom, gray, white);
 	float: left;
 }
 nav ul {
@@ -21,7 +21,7 @@ nav ul {
 }
 
 nav ul li {
-	font-size: 20px;
+	font-size: 17px;
 	font-family: sans-serif;
 	background-color: white;
 	border: 2px solid black;
@@ -73,7 +73,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div class="body1" style="width:30%">
+<div class="body1" style="width:27%">
 <aside>
 <h1>외부사이트 맵</h1>
 <nav>

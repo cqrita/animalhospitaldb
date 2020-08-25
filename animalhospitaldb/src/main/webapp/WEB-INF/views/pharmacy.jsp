@@ -13,7 +13,7 @@ tbody {display:block; height:300px; width:300px; overflow:scroll; border:2px sol
 td {width: 200px;  height:100px; text-align: center; border:2px solid green collapse; } */
 
 table ,tr td, tr th{
-    border:1px solid red
+    border:1px solid $color-form-highlight;
 }
 tbody {
     display:block;
@@ -28,11 +28,16 @@ thead, tbody tr {
 }
 
 thead {
-    width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+    width: calc( 100% - 1em );/* scrollbar is average 1em/16px width, remove it from thead width */
+    background:#000;
+    color: white;
 } 
 
 table {
     width:100%;
+}
+td {
+	
 }
 </style>
 
@@ -91,7 +96,7 @@ $(document).ready(function() {
 </head>
 <body>
 <jsp:include page="sitemap.jsp"></jsp:include>
-	<div style="margin-left:30%">
+	<div style="margin-left:27%">
 	<h1>동물약국 검색</h1>
 	<select name="city" id="city">	
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
