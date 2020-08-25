@@ -202,7 +202,7 @@ background-color: gray;
 </div>
 
 	<div id="show">조회하고자 하는 항목을 선택해주세요.</div>
-	
+	<jsp:include page="menu.jsp"></jsp:include>
 	
 </body>
 </html>

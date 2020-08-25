@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>동물병원 검색</title>
 <style type="text/css">
 /* div{overflow:scroll;height:500px; width:500px;} */
 /* thead {display:block; background-color: orange;}
@@ -89,6 +89,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+	<h1>동물병원 검색</h1>
 	<select name="city" id="city">	
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
 		<option value="서울특별시">서울특별시</option>
