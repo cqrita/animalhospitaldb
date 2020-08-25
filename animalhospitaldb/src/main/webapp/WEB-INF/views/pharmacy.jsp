@@ -5,6 +5,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+/* div{overflow:scroll;height:500px; width:500px;} */
+/* thead {display:block; background-color: orange;}
+th{width: 100px; border:2px solid green ; }
+tbody {display:block; height:300px; width:300px; overflow:scroll; border:2px solid green; background-color: olive;  }
+td {width: 200px;  height:100px; text-align: center; border:2px solid green collapse; } */
+
+table ,tr td, tr th{
+    border:1px solid red
+}
+tbody {
+    display:block;
+    height:500px;
+    overflow:auto;
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+
+thead {
+    width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+} 
+
+table {
+    width:100%;
+}
+</style>
+
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -20,10 +51,10 @@ $(document).ready(function() {
 				success: function(med) {
 					$("#tab").empty();
 					for(var i=0;i<med.length;i++){
-						if(med[i].tel=="null"){
-							med[i].tel=""
+						if(med[i].tel==null){
+							med[i].tel=" "
 						}
-						var tab="<tr id="+med[i].seq +"><td>"+med[i].name+"</td><td>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td id='x' hidden='hidden'>"+med[i].X+"</td><td id='y' hidden='hidden'>"+med[i].Y+"</td></tr>";            
+						var tab="<tr id="+med[i].seq +"><td>"+med[i].name+"</td><td>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].X+"</td><td class='y' hidden='hidden'>"+med[i].Y+"</td></tr>";            
 						$("#tab").append(tab);
 					}
 				}
@@ -66,14 +97,9 @@ $(document).ready(function() {
 	</select>
 	<br>
 	<button id="ajaxbtn" name="ajaxbtn">검색</button>
+<div>
 	<table>
-		<colgroup>
-			<col width="10%">
-			<col width="80%">
-			<col width="10%">
-			<col width="0%">
-			<col width="0%">
-		</colgroup>
+		<thead>
 		<tr>
 			<th>약국명</th>
 			<th>주소</th>
@@ -81,17 +107,12 @@ $(document).ready(function() {
 			<th id='x' hidden='hidden'></th>
 			<th id='y' hidden='hidden'></th>
 		</tr>
+		</thead>
+	<tbody id="tab">
+	
+	</tbody>
 	</table>
-	<div style="height: 500px;overflow: auto;">
-	<table id="tab">
-		<colgroup>
-			<col width="10%">
-			<col width="80%">
-			<col width="10%">
-			<col width="0%">
-			<col width="0%">
-		</colgroup>
-	</table>
-	</div>
+</div>
+	<jsp:include page="menu.jsp"></jsp:include>
 </body>
 </html>
