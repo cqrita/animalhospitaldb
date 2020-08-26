@@ -86,10 +86,27 @@ $(document).ready(function() {
 						var tab="<tr id="+med[i].seq +"><td class='name'>"+med[i].name+"</td><td class='address'>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].x+"</td><td class='y' hidden='hidden'>"+med[i].y+"</td></tr>";            
 						$("#tab").append(tab);
 					}
+					
+					$(".name").mouseover(function(e){
+						  $(e.target).css("text-decoration", "underline");
+					});
+					
+					$(".name").mouseleave(function(e){
+						$(e.target).css("text-decoration", "none");
+					});
+					
+					$(".address").mouseover(function(e){
+						$(e.target).css("text-decoration", "underline");
+					});
+	
+					$(".address").mouseleave(function(e){
+						$(e.target).css("text-decoration", "none");
+					});
 				}
 			});
 		}
 	});	//on
+	
 	$("#city").change(function() {
 		var city= $("#city").children("option:selected").val();
 		if(city!="지역을 선택해주세요"){
