@@ -8,7 +8,7 @@
 <style type="text/css">
 .body1 {
 	margin: 0;
-	height: 100vh;
+	height: 129ex;
 	display: flex;
 	background: linear-gradient(to right bottom, gray, white);
 	float: left;
