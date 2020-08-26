@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   height: 100vh;
   margin: 0 auto;
   display: grid;
@@ -193,6 +193,8 @@ background-color: gray;
 
 </head>
 <body>
+	<jsp:include page="sitemap.jsp"></jsp:include>
+	<div class="body" style="margin-left:27%">
 	<form action="/animalhospital/sick" method="get"></form>
 	<div class="multi-button">
   <button id="button1">예방접종</button>
@@ -202,6 +204,9 @@ background-color: gray;
 </div>
 
 	<div id="show">조회하고자 하는 항목을 선택해주세요.</div>
+	<jsp:include page="menu.jsp"></jsp:include>
+	</div>
+
 	
 	
 </body>

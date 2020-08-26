@@ -5,11 +5,14 @@
 	<title>Home</title>
 </head>
 <body>
+<jsp:include page="sitemap.jsp"></jsp:include>
+<div style="margin-left:27%">
 <h1>
-	Hello world!  
+	동물병원 및 약국 검색 
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<h3>  어서오세요. </h3>
 <jsp:include page="menu.jsp"></jsp:include>
+</div>
 </body>
 </html>

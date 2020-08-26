@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>동물약국 검색</title>
 <style type="text/css">
 /* div{overflow:scroll;height:500px; width:500px;} */
 /* thead {display:block; background-color: orange;}
@@ -13,7 +13,7 @@ tbody {display:block; height:300px; width:300px; overflow:scroll; border:2px sol
 td {width: 200px;  height:100px; text-align: center; border:2px solid green collapse; } */
 
 table ,tr td, tr th{
-    border:1px solid red
+    border:1px solid $color-form-highlight;
 }
 tbody {
     display:block;
@@ -28,17 +28,45 @@ thead, tbody tr {
 }
 
 thead {
-    width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+    width: calc( 100% - 1em );/* scrollbar is average 1em/16px width, remove it from thead width */
+    background:#000;
+    color: white;
 } 
 
 table {
     width:100%;
+}
+td {
+	
 }
 </style>
 
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	var city= $("#city").children("option:selected").val();
+	if(city!="지역을 선택해주세요"){
+		$.ajax({
+			url : '/animalhospital/pharmacy/county',
+			data : {"a1": $("#city option:selected").val()},
+			type: 'post',
+			dataType: 'json',
+			success: function(county) {
+				$("#county").empty();
+				$("#county").append("<option value=\"지역을 선택해주세요\" selected=\"selected\">지역을 선택해주세요</option>");
+				for(var i=0;i<county.length;i++){
+					var option="<option value=\""+county[i]+"\">"+county[i]+"</option>"
+					$("#county").append(option);
+				}
+			},
+			error: function(request,status,error) {
+				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			}
+		});
+	}else{
+		$("#county").empty();
+		$("#county").append("<option value=\"지역을 선택해주세요\" selected=\"selected\">지역을 선택해주세요</option>");
+	}
 	$("#ajaxbtn").on("click", function() {
 		var city= $("#city").children("option:selected").val();
 		var county= $("#county").children("option:selected").val();
@@ -54,7 +82,7 @@ $(document).ready(function() {
 						if(med[i].tel==null){
 							med[i].tel=" "
 						}
-						var tab="<tr id="+med[i].seq +"><td>"+med[i].name+"</td><td>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].X+"</td><td class='y' hidden='hidden'>"+med[i].Y+"</td></tr>";            
+						var tab="<tr id="+med[i].seq +"><td class='name'>"+med[i].name+"</td><td class='address'>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].x+"</td><td class='y' hidden='hidden'>"+med[i].y+"</td></tr>";            
 						$("#tab").append(tab);
 					}
 				}
@@ -90,6 +118,9 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<jsp:include page="sitemap.jsp"></jsp:include>
+	<div style="margin-left:27%">
+	<h1>동물약국 검색</h1>
 	<select name="city" id="city">	
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
 		<option value="서울특별시">서울특별시</option>
@@ -115,7 +146,14 @@ $(document).ready(function() {
 	
 	</tbody>
 	</table>
-</div>
+	</div>
+	<div id="mapresult" style="width: 100%; height: 350px;">
+		병원명 / 주소를 클릭하시면 여기에 지도가 보여집니다. 
+		<jsp:include page="map.jsp"/>
+	</div>
 	<jsp:include page="menu.jsp"></jsp:include>
+	</div>
+	
+	
 </body>
 </html>
