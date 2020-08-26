@@ -45,6 +45,29 @@ td {
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	var city= $("#city").children("option:selected").val();
+	if(city!="지역을 선택해주세요"){
+		$.ajax({
+			url : '/animalhospital/hospital/county',
+			data : {"a1": $("#city option:selected").val()},
+			type: 'post',
+			dataType: 'json',
+			success: function(county) {
+				$("#county").empty();
+				$("#county").append("<option value=\"지역을 선택해주세요\" selected=\"selected\">지역을 선택해주세요</option>");
+				for(var i=0;i<county.length;i++){
+					var option="<option value=\""+county[i]+"\">"+county[i]+"</option>"
+					$("#county").append(option);
+				}
+			},
+			error: function(request,status,error) {
+				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			}
+		});
+	}else{
+		$("#county").empty();
+		$("#county").append("<option value=\"지역을 선택해주세요\" selected=\"selected\">지역을 선택해주세요</option>");
+	}
 	$("#ajaxbtn").on("click", function() {
 		var city= $("#city").children("option:selected").val();
 		var county= $("#county").children("option:selected").val();
