@@ -70,6 +70,50 @@ $(document).ready(function() {
 	$("#3").on("click", function() {
 		location.href="http://anipharm.net/"
 	});
+	$.ajax({
+		url : '/animalhospital/sitemap/show',
+		data : {},
+		type: 'post',
+		dataType: 'json',
+		success: function(list) {
+			$("#board").empty();
+			for(var i=0;i<list.length;i++){
+				var board="<tr><td hidden='hidden'>"+i+"</td><td>"+list[i].date+"</td><td>"+list[i].title+"</td><td>"+list[i].text+"</td><td><button  class='del'>삭제</button></td></tr>";            
+				$("#board").append(board);
+			}
+		}
+	});
+	$("#in").on("click", function() {
+		$.ajax({
+			url : '/animalhospital/sitemap/insert',
+			data : {'date': $("#date").val() ,'title': $("#title").val(),'text': $("#text").val()},
+			type: 'post',
+			dataType: 'json',
+			success: function(list) {
+				$("#board").empty();
+				for(var i=0;i<list.length;i++){
+					var board="<tr><td hidden='hidden'>"+i+"</td><td>"+list[i].date+"</td><td>"+list[i].title+"</td><td>"+list[i].text+"</td><td><button  class='del'>삭제</button></td></tr>";            
+					$("#board").append(board);
+				}
+			}
+		});
+	});
+	$("#board").on("click",$(".del") ,function(e) {
+		var seq=$(e.target).parent().prev().prev().prev().prev().html();
+		$.ajax({
+			url : '/animalhospital/sitemap/delete',
+			data : {'seq': seq},
+			type: 'post',
+			dataType: 'json',
+			success: function(list) {
+				$("#board").empty();
+				for(var i=0;i<list.length;i++){
+					var board="<tr><td hidden='hidden'>"+i+"</td><td>"+list[i].date+"</td><td>"+list[i].title+"</td><td>"+list[i].text+"</td><td><button  class='del'>삭제</button></td></tr>";            
+					$("#board").append(board);
+				}
+			}
+		});
+	});
 })
 </script>
 </head>
@@ -84,13 +128,12 @@ $(document).ready(function() {
     <li id="3"><span>동물약국협회</span></li>
   </ul>
 </nav>
-<form action="">
 <input type="date" id="date" name="date"><br>
 <input type="text" id="title" name="title"><br>
-<textarea rows="5" cols="25"></textarea><br>
-<input type="submit" value="등록"><br>
-</form>
-<table>
+<textarea id="text" rows="5" cols="25"></textarea><br>
+<input id="in" type="button" value="등록"><br>
+
+<table id="board">
 
 </table>
 </aside>
