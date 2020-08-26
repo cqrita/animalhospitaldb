@@ -120,6 +120,15 @@ $(document).ready(function() {
 <body>
 <div class="body1" style="width:27%">
 <aside>
+<%if(session.getAttribute("loginid")==null){ 	
+	%><jsp:include page="login.jsp"></jsp:include>
+	<jsp:include page="member.jsp"></jsp:include> <% 
+}else{
+%><jsp:include page="insertmember.jsp"></jsp:include> 
+<%-- 	<jsp:include page="logout.jsp"></jsp:include>--%>
+<% 	
+}%>
+
 <h1>외부사이트 맵</h1>
 <nav>
   <ul>
