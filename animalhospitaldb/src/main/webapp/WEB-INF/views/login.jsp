@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<p>로그인</p>
 <form action = "/animalhospital/login" method="post">
-id : <input type="text" name = "id"/>
-pw : <input type = "password" name="password"/>
+id : <input type="text" name = "id"/><br>
+pw : <input type = "password" name="password"/><br>
 <input type ="submit" value="로그인"/>
 </form>
 </body>
