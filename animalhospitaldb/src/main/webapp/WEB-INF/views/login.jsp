@@ -222,7 +222,7 @@ input::-moz-focus-inner {
 		<div class="container">
 			<div class="left">
 				<div class="login">Login</div>
-				<div class="eula">아이디와 비밀번호를 입력해주세요.</div>
+				<div class="eula">로그인하시고 다양한 정보를 지금바로 확인하세요.</div>
 			</div>
 			<div class="right">
 				<svg viewBox="0 0 320 300">
