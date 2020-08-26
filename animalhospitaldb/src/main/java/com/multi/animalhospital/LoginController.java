@@ -25,11 +25,14 @@ public class LoginController {
 	public String loginprocess(@RequestParam(value = "id") String id,
 			@RequestParam(value = "password") String pw,
 			HttpServletRequest request) {
+		HttpSession session = request.getSession();
 		System.out.println(id + ":" + pw);
 		boolean checkPw = dao.getMember(id, pw);
 		if(checkPw == true) {
-			HttpSession session = request.getSession();
 			session.setAttribute("loginid", id);
-		}return "loginprocess";
+		}else{
+			session.removeAttribute("loginid");
+		}
+		return "loginprocess";
 	}
 }

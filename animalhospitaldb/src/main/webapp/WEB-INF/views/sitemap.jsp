@@ -19,7 +19,7 @@ nav ul {
 }
 
 nav ul li {
-	font-size: 17px;
+	font-size: 15px;
 	font-family: sans-serif;
 	background-color: white;
 	border: 2px solid black;
