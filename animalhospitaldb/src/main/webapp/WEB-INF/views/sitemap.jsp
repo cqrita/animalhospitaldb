@@ -70,23 +70,16 @@ $(document).ready(function() {
 	$("#3").on("click", function() {
 		location.href="http://anipharm.net/"
 	});
-	$.ajax({
-		url : '/animalhospital/sitemap/show',
-		data : {},
-		type: 'post',
-		dataType: 'json',
-		success: function(list) {
-			$("#board").empty();
-			for(var i=0;i<list.length;i++){
-				var board="<tr><td hidden='hidden'>"+i+"</td><td>"+list[i].date+"</td><td>"+list[i].title+"</td><td>"+list[i].text+"</td><td><button  class='del'>삭제</button></td></tr>";            
-				$("#board").append(board);
-			}
-		}
+	$("#login").on("click", function() {
+		location.href="login"
 	});
-	$("#in").on("click", function() {
+	$("#insert").on("click", function() {
+		location.href="member"
+	});
+	if($("#board")){
 		$.ajax({
-			url : '/animalhospital/sitemap/insert',
-			data : {'date': $("#date").val() ,'title': $("#title").val(),'text': $("#text").val()},
+			url : '/animalhospital/sitemap/show',
+			data : {},
 			type: 'post',
 			dataType: 'json',
 			success: function(list) {
@@ -97,23 +90,38 @@ $(document).ready(function() {
 				}
 			}
 		});
-	});
-	$("#board").on("click",$(".del") ,function(e) {
-		var seq=$(e.target).parent().prev().prev().prev().prev().html();
-		$.ajax({
-			url : '/animalhospital/sitemap/delete',
-			data : {'seq': seq},
-			type: 'post',
-			dataType: 'json',
-			success: function(list) {
-				$("#board").empty();
-				for(var i=0;i<list.length;i++){
-					var board="<tr><td hidden='hidden'>"+i+"</td><td>"+list[i].date+"</td><td>"+list[i].title+"</td><td>"+list[i].text+"</td><td><button  class='del'>삭제</button></td></tr>";            
-					$("#board").append(board);
+		$("#in").on("click", function() {
+			$.ajax({
+				url : '/animalhospital/sitemap/insert',
+				data : {'date': $("#date").val() ,'title': $("#title").val(),'text': $("#text").val()},
+				type: 'post',
+				dataType: 'json',
+				success: function(list) {
+					$("#board").empty();
+					for(var i=0;i<list.length;i++){
+						var board="<tr><td hidden='hidden'>"+i+"</td><td>"+list[i].date+"</td><td>"+list[i].title+"</td><td>"+list[i].text+"</td><td><button  class='del'>삭제</button></td></tr>";            
+						$("#board").append(board);
+					}
 				}
-			}
+			});
 		});
-	});
+		$("#board").on("click",$(".del") ,function(e) {
+			var seq=$(e.target).parent().prev().prev().prev().prev().html();
+			$.ajax({
+				url : '/animalhospital/sitemap/delete',
+				data : {'seq': seq},
+				type: 'post',
+				dataType: 'json',
+				success: function(list) {
+					$("#board").empty();
+					for(var i=0;i<list.length;i++){
+						var board="<tr><td hidden='hidden'>"+i+"</td><td>"+list[i].date+"</td><td>"+list[i].title+"</td><td>"+list[i].text+"</td><td><button  class='del'>삭제</button></td></tr>";            
+						$("#board").append(board);
+					}
+				}
+			});
+		});
+	}	
 })
 </script>
 </head>
@@ -121,8 +129,10 @@ $(document).ready(function() {
 <div class="body1" style="width:27%">
 <aside>
 <%if(session.getAttribute("loginid")==null){ 	
-	%><jsp:include page="login.jsp"></jsp:include>
-	<jsp:include page="member.jsp"></jsp:include> <% 
+%>
+<button id="login">login</button>
+<button id="insert">insert</button>
+ <% 
 }else{
 %><jsp:include page="insertmember.jsp"></jsp:include> 
 <%-- 	<jsp:include page="logout.jsp"></jsp:include>--%>
@@ -137,6 +147,9 @@ $(document).ready(function() {
     <li id="3"><span>동물약국협회</span></li>
   </ul>
 </nav>
+
+<%if(session.getAttribute("loginid")!=null){ 	
+%>
 <input type="date" id="date" name="date"><br>
 <input type="text" id="title" name="title"><br>
 <textarea id="text" rows="5" cols="25"></textarea><br>
@@ -144,7 +157,11 @@ $(document).ready(function() {
 
 <table id="board">
 
-</table>
+</table>	
+<% 
+}%>
+
+
 </aside>
 </div>
 </body>

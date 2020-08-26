@@ -30,6 +30,9 @@ public class LoginController {
 		if(checkPw == true) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginid", id);
-		}return "loginprocess";
+			return "home";
+		}else{
+			return "login";
+		}
 	}
 }
