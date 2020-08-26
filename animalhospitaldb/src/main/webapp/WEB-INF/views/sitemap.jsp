@@ -76,6 +76,9 @@ $(document).ready(function() {
 	$("#insert").on("click", function() {
 		location.href="member"
 	});
+	$("#logout").on("click", function() {
+		location.href="logout"
+	});
 	if($("#board")){
 		$.ajax({
 			url : '/animalhospital/sitemap/show',
@@ -135,7 +138,7 @@ $(document).ready(function() {
  <% 
 }else{
 %><jsp:include page="insertmember.jsp"></jsp:include> 
-<%-- 	<jsp:include page="logout.jsp"></jsp:include>--%>
+<button id="logout">logout</button>
 <% 	
 }%>
 

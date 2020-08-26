@@ -31,8 +31,17 @@ public class LoginController {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginid", id);
 			return "home";
-		}else{
-			return "login";
 		}
+		return "login";
+	}
+	
+	@RequestMapping(value = "/logout")
+	public String destroySession(HttpServletRequest request) {
+		System.out.println("1");
+		HttpSession session = request.getSession();
+		String loginid = (String) session.getAttribute("loginid");
+		System.out.println("로그아웃 할 회원 : " + loginid);
+		session.invalidate();
+		return "home";
 	}
 }
