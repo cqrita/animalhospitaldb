@@ -10,8 +10,6 @@
 	margin: 0;
 	height: 100vh;
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	background: linear-gradient(to right bottom, gray, white);
 	float: left;
 }
@@ -55,7 +53,10 @@ nav ul li::before {
 nav ul li:hover::before {
 	transform: scale(7);
 }
-
+form {
+	padding-top :80px;
+	padding-left: 20px;
+}
 </style>
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
@@ -83,6 +84,15 @@ $(document).ready(function() {
     <li id="3"><span>동물약국협회</span></li>
   </ul>
 </nav>
+<form action="">
+<input type="date" id="date" name="date"><br>
+<input type="text" id="title" name="title"><br>
+<textarea rows="5" cols="25"></textarea><br>
+<input type="submit" value="등록"><br>
+</form>
+<table>
+
+</table>
 </aside>
 </div>
 </body>

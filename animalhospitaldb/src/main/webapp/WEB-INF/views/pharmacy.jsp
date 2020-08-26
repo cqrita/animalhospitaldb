@@ -82,7 +82,7 @@ $(document).ready(function() {
 						if(med[i].tel==null){
 							med[i].tel=" "
 						}
-						var tab="<tr id="+med[i].seq +"><td>"+med[i].name+"</td><td class='address'>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].x+"</td><td class='y' hidden='hidden'>"+med[i].y+"</td></tr>";            
+						var tab="<tr id="+med[i].seq +"><td class='name'>"+med[i].name+"</td><td class='address'>"+med[i].nameAddress+"</td><td>"+med[i].tel+"</td><td class='x' hidden='hidden'>"+med[i].x+"</td><td class='y' hidden='hidden'>"+med[i].y+"</td></tr>";            
 						$("#tab").append(tab);
 					}
 				}
@@ -146,7 +146,11 @@ $(document).ready(function() {
 	
 	</tbody>
 	</table>
-</div>
+	</div>
+	<div id="mapresult" style="width: 100%; height: 350px;">
+		병원명 / 주소를 클릭하시면 여기에 지도가 보여집니다. 
+		<jsp:include page="map.jsp"/>
+	</div>
 	<jsp:include page="menu.jsp"></jsp:include>
 	</div>
 	
