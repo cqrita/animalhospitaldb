@@ -13,6 +13,10 @@ import com.multi.animalhospitalVO.BoardVO;
 
 @Controller
 public class SitemapController {
+	
+	@RequestMapping("/sitemap")
+	public void sitemap() {}	
+	
 	@RequestMapping(value ="sitemap/insert", method = RequestMethod.POST)
 	@ResponseBody
 	public ArrayList<BoardVO> insert(String date, String title, String text,HttpServletRequest request) {

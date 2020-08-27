@@ -92,6 +92,9 @@ $(document).ready(function() {
 	$("#sic").on("click", function() {
 		location.href="/animalhospital/menu/sick"
 	});
+	$("#map").on("click", function() {
+		location.href="/animalhospital/menu/sitemap"
+	});
 })
 </script>
 </head>
@@ -101,6 +104,7 @@ $(document).ready(function() {
   <button id="hos">병원</button>
   <button id="pha">약국</button>
   <button id="sic">질병</button>
+  <button id="map">사이트</button>
 </div>
 </body>
 </html>

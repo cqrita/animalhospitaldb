@@ -1,19 +1,14 @@
 package com.multi.animalhospital;
 
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.xml.ws.Service;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.multi.animalhospitalDAO.MemberDAO;
-import com.multi.animalhospitalVO.MemberVO;
 
 @Controller
 public class MemberController {
@@ -38,7 +33,8 @@ public class MemberController {
 		{
 			HttpSession session = request.getSession();
 			session.setAttribute("loginid", id);
+			return "home";
 		}
-		return "insertmember";
+		return "login";
 	}
 }

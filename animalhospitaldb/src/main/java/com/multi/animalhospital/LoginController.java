@@ -22,17 +22,17 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String loginprocess(@RequestParam(value = "id") String id,
-			@RequestParam(value = "password") String pw,
+	public String loginprocess(@RequestParam(value = "id") String id, @RequestParam(value = "password") String pw,
 			HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		System.out.println(id + ":" + pw);
 		boolean checkPw = dao.getMember(id, pw);
-		if(checkPw == true) {
+		if (checkPw == true) {
 			session.setAttribute("loginid", id);
-		}else{
+		} else {
 			session.removeAttribute("loginid");
 		}
 		return "loginprocess";
 	}
+
 }

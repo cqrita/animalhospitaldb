@@ -39,6 +39,14 @@ table {
 td {
 	
 }
+
+body {
+  background: white;
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
 </style>
 
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
@@ -118,9 +126,10 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<jsp:include page="sitemap.jsp"></jsp:include>
-	<div style="margin-left:27%">
+	<div>
 	<h1>동물약국 검색</h1>
+	<jsp:include page="menu.jsp"></jsp:include>
+	<br>
 	<select name="city" id="city">	
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
 		<option value="서울특별시">서울특별시</option>
@@ -129,7 +138,6 @@ $(document).ready(function() {
 	<select name="county" id="county">
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
 	</select>
-	<br>
 	<button id="ajaxbtn" name="ajaxbtn">검색</button>
 <div>
 	<table>
@@ -151,7 +159,6 @@ $(document).ready(function() {
 		병원명 / 주소를 클릭하시면 여기에 지도가 보여집니다. 
 		<jsp:include page="map.jsp"/>
 	</div>
-	<jsp:include page="menu.jsp"></jsp:include>
 	</div>
 	
 	
