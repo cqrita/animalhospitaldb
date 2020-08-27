@@ -97,7 +97,7 @@ li:active {
 <body>
 <%if(session.getAttribute("loginid")!=null) {	
 	%>
-		<h1 style="color: white;">${sessionScope.loginid}님 환영합니다.</h1>
+		<h1 style="color: white;text-align: center;">${sessionScope.loginid}님 환영합니다.</h1>
 	<%
 	}%>
 <ul>

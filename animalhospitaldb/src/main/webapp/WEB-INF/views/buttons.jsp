@@ -90,7 +90,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<aside style="position:absolute;top:0;right:0;width: 20%">
+<aside class="outer" style="width: 20%; right: 0;position: fixed;padding: 20px;top:30%">
 <div class="multi-button">	
 <%if(session.getAttribute("loginid")==null) {	
 	%>

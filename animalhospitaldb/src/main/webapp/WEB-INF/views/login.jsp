@@ -8,11 +8,11 @@
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#member").on("click", function() {
-		location.href="/animalhospital/member"
-	});
 	$("#home").on("click", function() {
 		location.href="/animalhospital/"
+	});
+	$("#signin").on("click", function() {
+		location.href="/animalhospital/member"
 	});
 })
 </script>
@@ -196,7 +196,8 @@ button:active {
 			<div class="left">
 				<div class="login">Login</div>
 				<div class="eula">로그인하시고 다양한 정보를 지금바로 확인하세요.</div>
-				<button id="member">signin</button><button id="home">home</button>
+				<button id="signin">signin</button>
+				<button id="home">home</button>
 			</div>
 			<div class="right">
 				<svg>

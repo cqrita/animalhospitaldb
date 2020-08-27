@@ -15,10 +15,11 @@ public class MemberController {
 	MemberDAO dao = new MemberDAO();
 	
 	@RequestMapping(value = "/member", method = RequestMethod.GET)
-	public String memberview() {
+	public String member() {
 		System.out.println("회원가입 화면 이동");
 		return "member";
 	}
+	
 	
 	@RequestMapping(value="/member", method = RequestMethod.POST)
 	public String member(

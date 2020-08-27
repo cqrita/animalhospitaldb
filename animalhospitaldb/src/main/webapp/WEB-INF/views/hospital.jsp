@@ -141,7 +141,7 @@ $(document).ready(function() {
 <body>
 	<div>
 	<jsp:include page="buttons.jsp"></jsp:include>
-	<h1>hospital Select</h1>
+	<h1>동물병원 검색</h1>
 	<jsp:include page="menu.jsp"></jsp:include>
 	<br>
 	<select name="city" id="city">	

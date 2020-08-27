@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>SignUp</title>
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#login").on("click", function() {
@@ -157,6 +158,7 @@ button {
 	height: 30px;
 	line-height: 30px;
 	outline: none !important;
+	margin-left: calc(var(--border-size) * -1);
   
 }
 button:focus{
@@ -174,7 +176,8 @@ button:active {
     <div class="left">
       <div class="login">SignUp</div>
       <div class="eula">회원가입을 하시면 다양한 정보를 확인하실 수 있습니다.</div>
-      <button id="login">login</button><button id="home">home</button>
+      <button id="login">login</button>
+      <button id="home">home</button>
     </div>
     <div class="right">
       <svg>
