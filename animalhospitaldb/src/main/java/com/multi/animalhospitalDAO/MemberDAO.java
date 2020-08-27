@@ -14,7 +14,7 @@ public class MemberDAO {
 			String sql = "select id, password from signup where id= ? ";
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "hr", "hr");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@70.12.113.181:1521:xe", "hr", "hr");
 			PreparedStatement pt = con.prepareStatement(sql);
 			pt.setString(1, id);
 			ResultSet rs = pt.executeQuery();
