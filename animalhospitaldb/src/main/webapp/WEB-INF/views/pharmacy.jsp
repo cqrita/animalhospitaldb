@@ -127,6 +127,10 @@ $(document).ready(function() {
 </head>
 <body>
 	<div>
+<<<<<<< HEAD
+=======
+	<jsp:include page="buttons.jsp"></jsp:include>
+>>>>>>> branch 'master' of https://github.com/cqrita/animalhospitaldb
 	<h1>동물약국 검색</h1>
 	<jsp:include page="menu.jsp"></jsp:include>
 	<br>

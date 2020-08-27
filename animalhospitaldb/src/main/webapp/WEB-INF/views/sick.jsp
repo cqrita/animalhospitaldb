@@ -117,6 +117,10 @@ body {
 
 </head>
 <body>
+<<<<<<< HEAD
+=======
+	<jsp:include page="buttons.jsp"></jsp:include>
+>>>>>>> branch 'master' of https://github.com/cqrita/animalhospitaldb
 	<h1>질병 검색</h1>
 
 	<jsp:include page="menu.jsp"></jsp:include>

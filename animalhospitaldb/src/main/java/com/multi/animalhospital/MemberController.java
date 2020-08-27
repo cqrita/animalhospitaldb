@@ -35,6 +35,6 @@ public class MemberController {
 			session.setAttribute("loginid", id);
 			return "home";
 		}
-		return "login";
+		return "member";
 	}
 }

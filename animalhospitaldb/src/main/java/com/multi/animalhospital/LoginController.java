@@ -29,10 +29,28 @@ public class LoginController {
 		boolean checkPw = dao.getMember(id, pw);
 		if (checkPw == true) {
 			session.setAttribute("loginid", id);
+<<<<<<< HEAD
 		} else {
 			session.removeAttribute("loginid");
+=======
+			return "home";
+>>>>>>> branch 'master' of https://github.com/cqrita/animalhospitaldb
 		}
+<<<<<<< HEAD
 		return "loginprocess";
+=======
+		return "login";
+	}
+	
+	@RequestMapping(value = "/logout")
+	public String destroySession(HttpServletRequest request) {
+		System.out.println("1");
+		HttpSession session = request.getSession();
+		String loginid = (String) session.getAttribute("loginid");
+		System.out.println("로그아웃 할 회원 : " + loginid);
+		session.invalidate();
+		return "home";
+>>>>>>> branch 'master' of https://github.com/cqrita/animalhospitaldb
 	}
 
 }

@@ -131,6 +131,7 @@ $(document).ready(function() {
 <!-- <div class="body1" style="width:27%"> -->
 	<form action="/animalhospital/sitemap" method="get"></form>
 
+<<<<<<< HEAD
 <%if(session.getAttribute("loginid")==null){ 	
 %>
 <button id="login">login</button>
@@ -141,6 +142,9 @@ $(document).ready(function() {
 <!-- 	<jsp:include page="logout.jsp"></jsp:include> -->
 <% 	
 }%>
+=======
+
+>>>>>>> branch 'master' of https://github.com/cqrita/animalhospitaldb
 
 <h1>외부사이트 맵</h1>
   <ul>

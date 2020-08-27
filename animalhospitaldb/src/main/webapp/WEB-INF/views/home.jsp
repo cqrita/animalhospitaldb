@@ -9,6 +9,12 @@ $(document).ready(function() {
 	$("#login").on("click", function() {
 		location.href="/animalhospital/login"
 	});
+<<<<<<< HEAD
+=======
+	$("#logout").on("click", function() {
+		location.href="/animalhospital/logout"
+	});
+>>>>>>> branch 'master' of https://github.com/cqrita/animalhospitaldb
 	$("#hos").on("click", function() {
 		location.href="/animalhospital/menu/hospital"
 	});
@@ -92,8 +98,26 @@ li:active {
 	</style>
 </head>
 <body>
+<<<<<<< HEAD
 <ul>
 	<li id="login">login</li>
+=======
+<%if(session.getAttribute("loginid")!=null) {	
+	%>
+		<h1 style="color: white;">${sessionScope.loginid}님 환영합니다.</h1>
+	<%
+	}%>
+<ul>
+	<%if(session.getAttribute("loginid")==null) {	
+	%>
+		<li id="login">login/signin</li>
+	<%
+	}else{%>
+		<li id="logout">logout</li>
+	<%
+	}
+	%>
+>>>>>>> branch 'master' of https://github.com/cqrita/animalhospitaldb
 	<li id="hos">Hospital</li>
 	<li id="pha">Pharmacy</li>
 	<li id="sic">Sick</li>
