@@ -4,22 +4,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>SiteMap</title>
 <style type="text/css">
-.body1 {
-	margin: 0;
-	height: 129ex;
-	display: flex;
-	background: linear-gradient(to right bottom, gray, white);
-	float: left;
+
+body {
+  background: white;
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
 }
+
 nav ul {
 	list-style-type: none;
 	padding: 0;
 }
 
 nav ul li {
-	font-size: 17px;
+	font-size: 15px;
 	font-family: sans-serif;
 	background-color: white;
 	border: 2px solid black;
@@ -60,6 +61,7 @@ form {
 </style>
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function() {
 	$("#1").on("click", function() {
 		location.href="https://www.animal.go.kr/front/index.do"
@@ -75,9 +77,6 @@ $(document).ready(function() {
 	});
 	$("#insert").on("click", function() {
 		location.href="member"
-	});
-	$("#logout").on("click", function() {
-		location.href="logout"
 	});
 	if($("#board")){
 		$.ajax({
@@ -129,30 +128,21 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<div class="body1" style="width:27%">
-<aside>
-<%if(session.getAttribute("loginid")==null){ 	
-%>
-<button id="login">login</button>
-<button id="insert">insert</button>
- <% 
-}else{
-%><jsp:include page="insertmember.jsp"></jsp:include> 
-<button id="logout">logout</button>
-<% 	
-}%>
+<!-- <div class="body1" style="width:27%"> -->
+	<form action="/animalhospital/sitemap" method="get"></form>
+
+
 
 <h1>외부사이트 맵</h1>
-<nav>
   <ul>
-    <li id="1"><span>동물보호관리시스템</span></li>
-    <li id="2"><span>동물보호협회</span></li>
-    <li id="3"><span>동물약국협회</span></li>
+    <li id="1">동물보호관리시스템</li>
+    <li id="2">동물보호협회</li>
+    <li id="3">동물약국협회</li>
   </ul>
-</nav>
 
 <%if(session.getAttribute("loginid")!=null){ 	
 %>
+<h4>일정을 등록하세요.</h4>
 <input type="date" id="date" name="date"><br>
 <input type="text" id="title" name="title"><br>
 <textarea id="text" rows="5" cols="25"></textarea><br>
@@ -164,8 +154,5 @@ $(document).ready(function() {
 <% 
 }%>
 
-
-</aside>
-</div>
 </body>
 </html>

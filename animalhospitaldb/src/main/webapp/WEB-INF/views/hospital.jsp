@@ -6,11 +6,6 @@
 <meta charset="UTF-8">
 <title>동물병원 검색</title>
 <style type="text/css">
-/* div{overflow:scroll;height:500px; width:500px;} */
-/* thead {display:block; background-color: orange;}
-th{width: 100px; border:2px solid green ; }
-tbody {display:block; height:300px; width:300px; overflow:scroll; border:2px solid green; background-color: olive;  }
-td {width: 200px;  height:100px; text-align: center; border:2px solid green collapse; } */
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
 
 
@@ -41,6 +36,14 @@ table {
 td {
 	
 }
+
+body {
+  background: white;
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
 </style>
 <script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
@@ -136,9 +139,11 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-	<jsp:include page="sitemap.jsp"></jsp:include>
-	<div style="margin-left:27%">
-	<h1>동물병원 검색</h1>
+	<div>
+	<jsp:include page="buttons.jsp"></jsp:include>
+	<h1>hospital Select</h1>
+	<jsp:include page="menu.jsp"></jsp:include>
+	<br>
 	<select name="city" id="city">	
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
 		<option value="서울특별시">서울특별시</option>
@@ -161,7 +166,6 @@ $(document).ready(function() {
 	<select name="county" id="county">
 		<option value="지역을 선택해주세요" selected="selected">지역을 선택해주세요</option>
 	</select>
-	<br>
 	<button id="ajaxbtn" name="ajaxbtn">검색</button>
 	<div>
 		<table>
@@ -180,10 +184,9 @@ $(document).ready(function() {
 		</table>
 	</div>
 	<div id="mapresult" style="width: 100%; height: 350px;">
-		병원명 / 주소를 클릭하시면 여기에 지도가 보여집니다. 
+		<h2>병원명 / 주소를 클릭하시면 여기에 지도가 보여집니다. </h2>
 		<jsp:include page="map.jsp"/>
 	</div>
-	<jsp:include page="menu.jsp"></jsp:include>
 	</div>
 </body>
 </html>

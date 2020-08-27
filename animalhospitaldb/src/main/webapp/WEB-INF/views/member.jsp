@@ -5,9 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>SignUp</title>
+<script src="/animalhospital/resources/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-var current = null;
-
+$(document).ready(function() {
+	$("#login").on("click", function() {
+		location.href="/animalhospital/login"
+	});
+	$("#home").on("click", function() {
+		location.href="/animalhospital/"
+	});
+})
 </script>
 <style type="text/css">
 @import url('https://rsms.me/inter/inter-ui.css');
@@ -142,6 +149,22 @@ input::-moz-focus-inner {
 #submit:active {
   color: #d0d0d2;
 }
+button {
+  color: #707075;
+  margin-top: 10px;
+  transition: color 300ms;
+  font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+	outline: none !important;
+  
+}
+button:focus{
+	color: #f2f2f2;
+}
+button:active {
+	color: #d0d0d2;
+}
 </style>
 </head>
 <body>
@@ -151,30 +174,11 @@ input::-moz-focus-inner {
     <div class="left">
       <div class="login">SignUp</div>
       <div class="eula">회원가입을 하시면 다양한 정보를 확인하실 수 있습니다.</div>
+      <button id="login">login</button><button id="home">home</button>
     </div>
     <div class="right">
-      <svg viewBox="0 0 320 300">
-        <defs>
-          <linearGradient
-                          inkscape:collect="always"
-                          id="linearGradient"
-                          x1="13"
-                          y1="193.49992"
-                          x2="307"
-                          y2="193.49992"
-                          gradientUnits="userSpaceOnUse">
-            <stop
-                  style="stop-color:#ff00ff;"
-                  offset="0"
-                  id="stop876" />
-            <stop
-                  style="stop-color:#ff0000;"
-                  offset="1"
-                  id="stop878" />
-          </linearGradient>
-        </defs>
-        <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
-      </svg>
+      <svg>
+     </svg>
 <form action = "member" method ="post">
       <div class="form">
         <label for="name">Name</label>

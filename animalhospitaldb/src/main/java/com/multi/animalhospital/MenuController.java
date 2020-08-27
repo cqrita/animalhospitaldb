@@ -17,6 +17,10 @@ public class MenuController {
 	public String sick() {
 		return "redirect:/sick";
 	}
+	@RequestMapping("/menu/sitemap")
+	public String sitemap() {
+		return "redirect:/sitemap";
+	}
 	@RequestMapping("/menu/home")
 	public String home() {
 		return "redirect:/";

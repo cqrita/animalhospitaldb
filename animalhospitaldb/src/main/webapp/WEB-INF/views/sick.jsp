@@ -7,89 +7,13 @@
 <title>건강/질병정보</title>
 
 <style>
-:root {
-  --border-size: 0.125rem;
-  --duration: 250ms;
-  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --font-family: monospace;
-  --color-primary: white;
-  --color-secondary: black;
-  --color-tertiary: dodgerblue;
-  --shadow: rgba(0, 0, 0, 0.1);
-  --space: 1rem;
+body {
+  background: white;
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.body {
-  height: 100vh;
-  margin: 0 auto;
-  display: grid;
-  place-items: center;
-  padding: calc(var(--space) * 2);
-  max-width: 700px;
-}
-
-.multi-button {
-  display: flex;
-  width: 100%;
-  box-shadow: var(--shadow) 4px 4px;
-}
-
-.multi-button button {
-  flex-grow: 1;
-  cursor: pointer;
-  position: relative;
-  padding:
-    calc(var(--space) / 1.125)
-    var(--space)
-    var(--space);
-  border: var(--border-size) solid black;
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  font-size: 1.5rem;
-  font-family: var(--font-family);
-  text-transform: lowercase;
-  text-shadow: var(--shadow) 2px 2px;
-  transition: flex-grow var(--duration) var(--ease);
-}
-
-.multi-button button + button {
-  border-left: var(--border-size) solid black;
-  margin-left: calc(var(--border-size) * -1);
-}
-
-.multi-button button:hover,
-.multi-button button:focus {
-  flex-grow: 2;
-  color: white;
-  outline: none;
-  text-shadow: none;
-  background-color: var(--color-secondary);
-}
-
-.multi-button button:focus {
-  outline: var(--border-size) dashed var(--color-primary);
-  outline-offset: calc(var(--border-size) * -3);
-}
-
-.multi-button:hover button:focus:not(:hover) {
-  flex-grow: 1;
-  color: var(--color-secondary);
-  background-color: var(--color-primary);
-  outline-color: var(--color-tertiary);
-}
-
-.multi-button button:active {
-  transform: translateY(var(--border-size));
-}
-
-h2{
-color:white;
-background-color: gray;
-}
 </style>
 
 
@@ -193,21 +117,17 @@ background-color: gray;
 
 </head>
 <body>
-	<jsp:include page="sitemap.jsp"></jsp:include>
-	<div class="body" style="margin-left:27%">
+	<jsp:include page="buttons.jsp"></jsp:include>
+	<h1>질병 검색</h1>
+
+	<jsp:include page="menu.jsp"></jsp:include>
+	<br>
 	<form action="/animalhospital/sick" method="get"></form>
-	<div class="multi-button">
   <button id="button1">예방접종</button>
   <button id="button2">질병</button>
   <button id="button3">식사</button>
   <button id="button4">응급처치사항</button>
-</div>
-
+  <br>
 	<div id="show">조회하고자 하는 항목을 선택해주세요.</div>
-	<jsp:include page="menu.jsp"></jsp:include>
-	</div>
-
-	
-	
 </body>
 </html>
