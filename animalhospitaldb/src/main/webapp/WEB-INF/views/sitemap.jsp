@@ -283,6 +283,9 @@ form {
 </script>
 </head>
 <body>
+
+	<jsp:include page="buttons.jsp"></jsp:include>
+	<jsp:include page="menu.jsp"></jsp:include>
 	<%-- <div class="body2" align="center">
 		<jsp:include page="login.jsp"></jsp:include>
 
