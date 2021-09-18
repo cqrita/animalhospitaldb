@@ -16,12 +16,12 @@
 👩🏻‍💻  Sohn Ha Kyung [@hortenssiaa](https://github.com/hortenssiaa)<br><br>
 
 ### 開発環境
+- Spring FrameWork
 - Java version 1.8
 - JDBC 
 - Oracle DB
-- Public Data
 - Kakao Map API
-- Spring FrameWork
+- Public Data
 - Git, Github<br><br>
 
 ### 📌 主要機能
