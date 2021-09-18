@@ -25,17 +25,13 @@
 - Git, Github<br><br>
 
 ### 📌 主要機能
-- Login<br>
-  : Login, Sign Up
-- Hospital<br>
-  : 地域別の病院の情報, Map
-- Pharmacy<br>
-  : 地域別薬局の情報, Map
-- Sick<br>
-  : 予防接種、疾病、食事管理、応急処置事項の情報提供<br><br>
+- 会員管理の機能（Sign Up, Login）<br>
+- 地図の上に病院、薬局の情報提供<br>
+- ペットに対する健康管理知識<br><br>
 
 ### DB設計図
-추가중<br><br>
+![download](https://user-images.githubusercontent.com/16066576/133897979-469d6bf8-ead4-45aa-9855-f5ab8f95e2cd.png)
 
 ### Flow Chart
-추가중<br><br>
+<img src="https://user-images.githubusercontent.com/16066576/133898169-feba7e2a-5129-4f2b-a481-bb276277ce84.png" width=550/>
+
